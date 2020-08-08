@@ -1,8 +1,8 @@
 import math
-from tree import Tree
+from binary_tree import BinaryTree
 
 
-class BST(Tree):
+class BST(BinaryTree):
     def __init__(self, root):
         self.root = root
 
@@ -32,9 +32,9 @@ class BST(Tree):
 
         def recoverBSTRecursion(root):
             if root:
-                recoverBSTNode(root)
                 recoverBSTRecursion(root.left)
                 recoverBSTRecursion(root.right)
+                recoverBSTNode(root)
         recoverBSTRecursion(root)
 
     def isValidBST(self, root):

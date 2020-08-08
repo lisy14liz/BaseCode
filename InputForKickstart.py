@@ -11,8 +11,11 @@ def input():
     if input_list:
         return input_list.pop(0)
 
+# in kickstart
+def inp(type=int):
+    return map(type,input().split())
 
-if __name__ == "main":
+if __name__ == "__main__":
     T = int(input())
     for x in range(1, T + 1):
         N = int(input())

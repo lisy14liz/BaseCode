@@ -22,7 +22,7 @@ class Trie:
         cur = self.root
         for c in word:
             cur = cur.childs[c]
-        cur.isEnd = True
+        cur.isEnd = True # 这个地方还可以用来放出现的word/words（没重复/有重复）所在的idx/idxs
 
     def search(self, word: str) -> bool:
         """

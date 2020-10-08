@@ -18,12 +18,21 @@ class BinaryTree:
         '''
         related problem: 94. Binary Tree Inorder Traversal - https://leetcode.com/problems/binary-tree-inorder-traversal/
         '''
-        if root:
-            return self.inorderTraversal(root.left) + \
-                [root.val] + \
-                self.inorderTraversal(root.right)
-        else:
+        if root is None:
             return []
+        return self.inorderTraversal(root.left) + \
+            [root.val] + \
+            self.inorderTraversal(root.right)
+
+    def IterInorderTraversal(self, root, reversed=False):  # version with generator
+        if root is None:
+            return
+        (sub_first, sub_second) = (root.left, root.right) if not reversed else (root.right, root.left)
+        for item in self.IterInorderTraversal(sub_first):
+            yield item
+        yield root
+        for item in self.IterInorderTraversal(sub_second):
+            yield item
 
     def postorderTraversal(self, root):
         '''

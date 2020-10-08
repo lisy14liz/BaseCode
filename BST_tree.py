@@ -8,6 +8,7 @@ class BST(BinaryTree):
 
     def recoverBST(self, root):
         """
+        ! only two element are swapped
         Do not return anything, modify root in-place instead.
         related problem: 99. Recover Binary Search Tree - https://leetcode.com/problems/recover-binary-search-tree/
         """
